@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #000000;
+    color: #F6F6F6;
+    /* TAREA 3: Comentamos height para mejor adaptación */
+    /* height: 100vh; */
+    box-sizing: border-box;
+}
+
+/* TAREA 4: Estilos del header/cabecalho */
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 5rem; /* Convertido de 80px a rem: 80/16 = 5rem */
+}
+
+.cabecalho__menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem; /* Convertido de 24px a rem: 24/16 = 1.5rem */
+    font-weight: 600;
+    color: #22D4FD;
+    text-decoration: none; /* TAREA 4: Eliminamos el subrayado de los enlaces */
+    /* TAREA 5: Espaciado interno de los enlaces */
+    padding: 0.625rem 0; /* Convertido de 10px a rem: 10/16 = 0.625rem */
+}
+
+.cabecalho__menu__link:hover {
+    color: #272727;
+}
+
+.titulo-destaque{
+    color: #22D4FD;
+}
+
+/* TAREA 2: Cambiar margin por padding en presentación */
+.presentacion{
+    display: flex;
+    align-items: center;
+    padding: 5% 15%; /* Reemplazamos margin: 10% por padding con valores ajustados */
+    justify-content: space-between;
+    gap: 82px; /* TAREA 1: Agregamos espacio entre elementos */
+}
+
+/* TAREA 3: Responsividad del contenido de texto - cambiar a ancho relativo */
+.presentacion__contenido{
+    width: 50%; /* Cambiado de width fijo a 50% para responsividad */
+    max-width: 615px; /* Mantiene el ancho original máximo en desktop */
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem; /* Convertido de 36px a rem: 36/16 = 2.25rem */
+    font-family: "Krona One", sans-serif;
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem; /* Convertido de 24px a rem: 24/16 = 1.5rem */
+    font-family: "Montserrat", sans-serif;
+}
+
+.presentacion__enlaces{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Convertido de 32px a rem: 32/16 = 2rem */
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: 'Krona One', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem; /* Convertido de 24px a rem: 24/16 = 1.5rem */
+}
+
+/* TAREA 4: Mejorando la responsividad de los enlaces de navegación */
+.presentacion__enlaces__link{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    gap: 0.5rem; /* Reducido el gap para pantallas pequeñas */
+    width: 50%; /* Cambiado de width fijo a 50% para responsividad */
+    max-width: 378px; /* Mantiene el ancho original máximo en desktop */
+    min-width: 200px; /* Ancho mínimo para evitar que se compriman demasiado */
+    background-color: transparent;
+    color: #F6F6F6;
+    border: 2px solid #22D4FD;
+    text-align: center;
+    padding: 1rem 0.5rem; /* Padding ajustado para mejor distribución */
+    border-radius: 0.5rem; /* Convertido de 8px a rem: 8/16 = 0.5rem */
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem; /* Reducido ligeramente para mejor ajuste */
+    font-weight: 600;
+    text-decoration: none;
+    box-sizing: border-box; /* Asegura que padding no desborde */
+}
+
+/* Estilos para las imágenes dentro de los botones */
+.presentacion__enlaces__link img {
+    width: 1.5rem; /* Tamaño fijo para los iconos */
+    height: 1.5rem;
+    flex-shrink: 0; /* Evita que los iconos se compriman */
+}
+
+.presentacion__enlaces__link:hover{
+    border-color: #0000FF;
+    background-color: #272727;
+    cursor: pointer;
+}
+
+/* TAREA 1: Adaptando imágenes para diferentes tamaños de pantalla */
+.presentacion__imagen {
+    width: 50%;
+    max-width: 488px; /* Mantiene el tamaño original máximo para no desbordarse en desktop */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilización de enlaces en currículum */
+.presentacion__contenido__texto a{
+    text-decoration: none;
+    color: #22D4FD;
+}
+
+/* TAREA 1: Footer/rodape personalizado */
+.rodape {
+    background-color: #22D4FD;  /* Fondo azul claro */
+    color: #000000;             /* Texto en negro */
+    text-align: center;         /* Texto centrado */
+    padding: 1.5rem;            /* Convertido de 24px a rem: 24/16 = 1.5rem */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    font-size: 1.5rem;          /* Convertido de 24px a rem: 24/16 = 1.5rem */
+    font-weight: 400;           /* Peso 400 */
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+/* TAREA 3: Media query para pantallas menores a 1200px - Imagen arriba del texto */
+@media (max-width: 1200px) {
+    .presentacion {
+        flex-direction: column-reverse; /* Imagen aparece ARRIBA del texto */
+        padding: 5%; /* NUEVA TAREA 1: Ajustamos espaciado para pantallas pequeñas */
+    }
+    
+    /* NUEVA TAREA 2: Refinando el ancho del contenido en dispositivos más pequeños */
+    .presentacion__contenido {
+        width: auto; /* El contenido se adapta automáticamente al padding */
+    }
+    
+    /* TAREA 4: Ajustando el encabezado para pantallas más pequeñas */
+    .cabecalho {
+        padding: 10%; /* Centramos mejor el encabezado */
+    }
+    
+    /* TAREA 5: Centrando elementos del menú en pantallas más pequeñas */
+    .cabecalho__menu {
+        justify-content: center; /* Centramos los elementos del menú */
+    }
+}
+
+/* TAREA 2: Media query para pantallas menores a 1023px - Diseño en columna con imagen arriba */
+@media (max-width: 1023px) {
+    .presentacion {
+        flex-direction: column-reverse; /* Imagen arriba del texto también en esta resolución */
+    }
+    
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .cabecalho__menu {
+        gap: 1.5rem; /* Gap más pequeño para móviles muy pequeños */
+        flex-wrap: wrap; /* Permite que los enlaces se envuelvan si es necesario */
+    }
+    
+    .cabecalho__menu__link {
+        font-size: 1.1rem; /* Fuente más pequeña para móviles */
+    }
+    
+    .presentacion__enlaces__link {
+        width: 90%; /* Ancho más amplio en móviles muy pequeños */
+        min-width: 200px; /* Ancho mínimo menor */
+        font-size: 0.9rem; /* Fuente más pequeña */
+    }
+}
